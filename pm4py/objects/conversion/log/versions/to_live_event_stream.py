@@ -4,7 +4,7 @@ from pm4py.streaming.stream import stream
 def apply(obj, param=None):
     static = log_conv.apply(obj, variant=log_conv.TO_EVENT_STREAM)
     print(static)
-    sorted(static, key=lambda e: e['time:timestamp'])
+    static = sorted(static, key=lambda e: e['time:timestamp'])
     print(static)
     online = stream.LiveEventStream()
     for e in static:
